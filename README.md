@@ -1,4 +1,4 @@
-# helm-charts
+# helm-charts-lab
 
 Helm charts for subshell side projects.
 
@@ -7,7 +7,7 @@ Helm charts for subshell side projects.
 The following command allows you to download and install all the charts from this repository:
 
 ```sh
-helm repo add subshell-public https://subshell.github.io/helm-charts-lab
+helm repo add subshell-lab https://subshell.github.io/helm-charts-lab
 ```
 
 ## Development
