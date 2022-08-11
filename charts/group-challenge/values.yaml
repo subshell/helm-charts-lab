@@ -4,7 +4,7 @@ image:
   repository: ghcr.io/subshell/group-challenge
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "0.7.0"
+  tag: "0.7.2"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -99,7 +99,7 @@ imgProxy:
   image:
     repository: darthsim/imgproxy
     pullPolicy: IfNotPresent
-    tag: "v3.3.3"
+    tag: "v3.7.1"
   env: []
   resources: {}
 
