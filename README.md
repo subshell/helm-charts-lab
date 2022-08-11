@@ -1,4 +1,4 @@
-# helm-charts
+# helm-charts-lab
 
 Helm charts for subshell side projects.
 
