@@ -1,4 +1,6 @@
-# helm-charts-lab
+# subshell Helm Charts Lab
+
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/subshell-lab)](https://artifacthub.io/packages/search?repo=subshell-lab)
 
 Helm charts for subshell side projects.
 
