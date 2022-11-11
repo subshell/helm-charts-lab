@@ -1,0 +1,6 @@
+apiVersion: v2
+name: artifactory-search
+description: Artifactory Search helm chart
+type: application
+version: 1.0.0
+appVersion: "0.0.1"
