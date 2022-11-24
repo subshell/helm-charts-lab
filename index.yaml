@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  artifactory-search:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-11-24T09:52:13.578519341Z"
+    description: Artifactory Search helm chart
+    digest: fb5cb46adc5a2e653b5d3cacfc8d167409dddc4713c712c828a7c681d11d51d3
+    name: artifactory-search
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/artifactory-search-1.0.0/artifactory-search-1.0.0.tgz
+    version: 1.0.0
   group-challenge:
   - apiVersion: v2
     appVersion: 0.11.0
@@ -91,4 +102,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/group-challenge-1.0.3/group-challenge-1.0.3.tgz
     version: 1.0.3
-generated: "2022-11-11T13:05:03.372249802Z"
+generated: "2022-11-24T09:52:13.578536041Z"
