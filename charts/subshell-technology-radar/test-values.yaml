@@ -1,0 +1,16 @@
+nameOverride: test-technology-radar
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+
+resources:
+  requests:
+    cpu: "250m"
+    memory: "100M"
+  limits:
+    memory: "100M"
