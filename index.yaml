@@ -102,4 +102,17 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/group-challenge-1.0.3/group-challenge-1.0.3.tgz
     version: 1.0.3
-generated: "2022-11-24T09:52:13.578536041Z"
+  subshell-technology-radar:
+  - apiVersion: v2
+    created: "2023-04-13T15:22:14.694995833Z"
+    description: A Helm chart for the subshell Technology Radar
+    digest: a5220e598e8dfacbb8e3b783af1b76fcf5d0645bf5e3825602b4e07e69c5ce7e
+    maintainers:
+    - email: weasel@subshell.com
+      name: Team Weasel
+    name: subshell-technology-radar
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-04-13T15:22:14.695044836Z"
