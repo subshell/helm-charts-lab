@@ -101,7 +101,7 @@ imgProxy:
   image:
     repository: darthsim/imgproxy
     pullPolicy: IfNotPresent
-    tag: "v3.7.2"
+    tag: "v3.21.0"
   env: []
   resources: {}
 
