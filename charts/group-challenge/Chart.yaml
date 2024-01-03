@@ -2,8 +2,8 @@ apiVersion: v2
 name: group-challenge
 description: Group challenge helm chart
 type: application
-version: 1.2.3
-appVersion: "0.13.0"
+version: 1.2.4
+appVersion: "0.13.1"
 dependencies:
   - name: postgresql
     version: 11.9.6
