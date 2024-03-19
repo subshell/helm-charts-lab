@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "ugc-demo.fullname" . }}
+  labels:
+    {{- include "ugc-demo.labels" . | nindent 4 }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  selector: {{- include "ugc-demo.selectorLabels" . | nindent 4 }}
+  type: {{ .Values.service.type }}
+  ports:
+    - protocol: TCP
+      targetPort: 8080
+      port: {{ .Values.service.port }}

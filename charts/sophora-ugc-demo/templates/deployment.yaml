@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ugc-demo.fullname" . }}
+  labels:
+    {{- include "ugc-demo.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "ugc-demo.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/sophora-properties-configmap.yaml") . | sha256sum }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "ugc-demo.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: config-generator
+          image: alpine:3.19
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: SOPHORA_DELIVERY_CLIENT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: {{ .Values.sophora.authentication.secret.usernameKey }}
+                  name: {{ .Values.sophora.authentication.secret.name }}
+                  optional: false
+            - name: SOPHORA_DELIVERY_CLIENT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: {{ .Values.sophora.authentication.secret.passwordKey }}
+                  name: {{ .Values.sophora.authentication.secret.name }}
+                  optional: false
+          command: [ "/bin/sh" ]
+          args:
+            - "-c"
+            - |
+              apk update && apk add gettext
+              mkdir /usr/local/ugc-demo/conf/
+              echo "Created conf directory"
+              envsubst < /usr/local/ugc-demo-template/sophora.properties > /usr/local/ugc-demo/conf/sophora.properties
+              echo "Generated /usr/local/ugc-demo/conf/sophora.properties from ENV and template"
+              cp /usr/local/ugc-demo-template/submitter.properties /usr/local/ugc-demo/conf/submitter.properties
+              echo "Generated /usr/local/ugc-demo/conf/submitter.properties from template"
+          volumeMounts:
+            - name: submitter-properties-template
+              mountPath: /usr/local/ugc-demo-template/submitter.properties
+              subPath: submitter.properties
+            - name: sophora-properties-template
+              mountPath: /usr/local/ugc-demo-template/sophora.properties
+              subPath: sophora.properties
+            - name: ugc-demo-config
+              mountPath: /usr/local/ugc-demo/
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: ugc-demo-config
+              mountPath: /usr/local/ugc-demo/
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: ugc-demo-config
+          emptyDir: {}
+        - name: submitter-properties-template
+          configMap:
+            name: {{ include "ugc-demo.fullname" . }}-submitter-properties
+        - name: sophora-properties-template
+          configMap:
+            name: {{ include "ugc-demo.fullname" . }}-sophora-properties
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

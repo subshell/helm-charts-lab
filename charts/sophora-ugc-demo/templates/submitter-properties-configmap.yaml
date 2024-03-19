@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "ugc-demo.fullname" . }}-submitter-properties
+  labels:
+    {{- include "ugc-demo.labels" . | nindent 4 }}
+data:
+  submitter.properties: |-
+    {{- toString (required "A valid submitter.properties configuration needs to be provided." .Values.ugc.demo.submitterproperties) | nindent 4  }}
