@@ -1,0 +1,59 @@
+nameOverride: ""
+fullnameOverride: ""
+
+replicaCount: 1
+
+image:
+  repository: docker.subshell.com/ugc/ugc-demo
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+
+podAnnotations: {}
+
+podSecurityContext: {}
+# fsGroup: 2000
+
+ingress:
+  enabled: false
+  ingressClassName: nginx
+  tls:
+  hosts:
+  annotations: {}
+
+service:
+  type: ClusterIP
+  port: 8080
+  annotations: {}
+
+ugc:
+  demo:
+    submitterproperties:
+
+    sophoraproperties:
+
+sophora:
+  authentication:
+    secret:
+      name: secret-name
+      usernameKey: username
+      passwordKey: password
+
+# Additional environment variables can be defined here
+env:
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "2.5G"
+  limits:
+    memory: "2.5G"
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
