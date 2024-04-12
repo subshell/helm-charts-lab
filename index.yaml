@@ -3,6 +3,16 @@ entries:
   artifactory-search:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2024-04-12T20:29:18.832459745Z"
+    description: Artifactory Search helm chart
+    digest: ea93077d8790510b8cf569effa2e75751c40da7279311e5de10b4df88c2eb631
+    name: artifactory-search
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/artifactory-search-1.0.1/artifactory-search-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2022-11-24T09:52:13.578519341Z"
     description: Artifactory Search helm chart
     digest: fb5cb46adc5a2e653b5d3cacfc8d167409dddc4713c712c828a7c681d11d51d3
@@ -174,4 +184,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2024-03-19T14:10:30.243412366Z"
+generated: "2024-04-12T20:29:18.83249433Z"
