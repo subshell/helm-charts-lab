@@ -69,6 +69,18 @@ spec:
           volumeMounts:
             - name: ugc-demo-config
               mountPath: /usr/local/ugc-demo/
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 3
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
