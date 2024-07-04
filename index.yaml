@@ -160,6 +160,19 @@ entries:
   sophora-ugc-demo:
   - apiVersion: v2
     appVersion: latest
+    created: "2024-07-04T11:41:41.222439193Z"
+    description: A Helm chart for the UGC demo
+    digest: 5651772d573e411d4ac1b0ad26c587849902191f482edd9d93b148986ff079c7
+    maintainers:
+    - email: team-koala@subshell.com
+      name: Team Koala
+    name: sophora-ugc-demo
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/sophora-ugc-demo-0.1.1/sophora-ugc-demo-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2024-03-19T14:10:30.243378793Z"
     description: A Helm chart for the UGC demo
     digest: 517162923ca4824aef591aa6071d57b0d341dd81c1349d312e2d7e7a1a02f5de
@@ -184,4 +197,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2024-04-12T20:29:18.83249433Z"
+generated: "2024-07-04T11:41:41.222492222Z"
