@@ -71,14 +71,14 @@ spec:
               mountPath: /usr/local/ugc-demo/
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /ugc-demo/demosite/
+              port: 8080
             initialDelaySeconds: 30
             periodSeconds: 3
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /ugc-demo/demosite/
+              port: 8080
             initialDelaySeconds: 30
             periodSeconds: 3
           resources:
