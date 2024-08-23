@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "knowledge-base.fullname" . }}
   labels:
-    {{- include "knowledge-base.labels" . | nindent 4 }}
+    {{- include "knowledge-base-frontend.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "knowledge-base.selectorLabels" . | nindent 4 }}
+    {{- include "knowledge-base-frontend.selectorLabels" . | nindent 4 }}

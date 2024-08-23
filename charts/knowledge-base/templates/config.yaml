@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ include "knowledge-base.fullname" . }}
   labels:
-    {{- include "knowledge-base.labels" . | nindent 4 }}
+    {{- include "knowledge-base-api.labels" . | nindent 4 }}
 data:
   application.yml: |-
     sophora:
