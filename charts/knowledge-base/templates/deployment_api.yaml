@@ -49,12 +49,13 @@ spec:
               containerPort: 8181
               protocol: TCP
           livenessProbe:
+            # quickfix for the probes. Should use spring-boot endpoints in the future
             httpGet:
-              path: /
+              path: /knowledgebase/list?pageIndex=0&pageSize=1
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /knowledgebase/list?pageIndex=0&pageSize=1
               port: http
           resources:
             {{- toYaml .Values.api.container.resources | nindent 12 }}
