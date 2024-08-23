@@ -6,7 +6,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "knowledge-base.labels" . | nindent 4 }}
+    {{- include "knowledge-base-frontend.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}

@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: "{{ include "knowledge-base.fullname" . }}-frontend"
   labels:
-    {{- include "knowledge-base.labels" . | nindent 4 }}
+    {{- include "knowledge-base-frontend.labels" . | nindent 4 }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      {{- include "knowledge-base.selectorLabels" . | nindent 6 }}
+      {{- include "knowledge-base-frontend.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       annotations:
@@ -17,7 +17,7 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
       labels:
-        {{- include "knowledge-base.selectorLabels" . | nindent 8 }}
+        {{- include "knowledge-base-frontend.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

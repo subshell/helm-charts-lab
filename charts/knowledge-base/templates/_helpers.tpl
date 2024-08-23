@@ -31,11 +31,11 @@ Create chart name and version as used by the chart label.
 {{- end }}
 
 {{/*
-Common labels
+Common labels API
 */}}
-{{- define "knowledge-base.labels" -}}
+{{- define "knowledge-base-api.labels" -}}
 helm.sh/chart: {{ include "knowledge-base.chart" . }}
-{{ include "knowledge-base.selectorLabels" . }}
+{{ include "knowledge-base-api.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -43,9 +43,29 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
-Selector labels
+Common labels Frontend
 */}}
-{{- define "knowledge-base.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "knowledge-base.name" . }}
+{{- define "knowledge-base-frontend.labels" -}}
+helm.sh/chart: {{ include "knowledge-base.chart" . }}
+{{ include "knowledge-base-frontend.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels API
+*/}}
+{{- define "knowledge-base-api.selectorLabels" -}}
+app.kubernetes.io/name: "{{ include "knowledge-base.name" . }}-api"
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Selector labels Frontend
+*/}}
+{{- define "knowledge-base-frontend.selectorLabels" -}}
+app.kubernetes.io/name: "{{ include "knowledge-base.name" . }}-frontend"
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
