@@ -160,6 +160,16 @@ entries:
   knowledge-base:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2024-08-23T16:05:29.87845493Z"
+    description: Knowledge Base frontend and API/backend
+    digest: 72add8e47dfb02764621fa2b625692df754bd415f15d999d53c0d4acf4f6745a
+    name: knowledge-base
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/knowledge-base-0.1.3/knowledge-base-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2024-08-23T15:54:07.59802356Z"
     description: Knowledge Base frontend and API/backend
     digest: 549aeb25d9883fa1cdb2f204326e5396da58ed80b5185bf569a31bb1f5faab55
@@ -241,4 +251,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2024-08-23T15:54:07.5980719Z"
+generated: "2024-08-23T16:05:29.878499493Z"
