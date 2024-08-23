@@ -157,6 +157,17 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/group-challenge-1.0.3/group-challenge-1.0.3.tgz
     version: 1.0.3
+  knowledge-base:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-08-23T12:18:46.755632878Z"
+    description: Knowledge Base frontend and API/backend
+    digest: 89a37e1ae8610e8f9663a17186dcb8ad3536c6b14f394563e5db116c6b666c75
+    name: knowledge-base
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/knowledge-base-0.1.0/knowledge-base-0.1.0.tgz
+    version: 0.1.0
   sophora-ugc-demo:
   - apiVersion: v2
     appVersion: latest
@@ -210,4 +221,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2024-07-04T12:11:29.481276159Z"
+generated: "2024-08-23T12:18:46.755757749Z"
