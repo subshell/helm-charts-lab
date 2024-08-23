@@ -1,0 +1,68 @@
+frontend:
+  image:
+    repository: docker.subshell.com/labday/knowledge-base/kb-frontend
+    pullPolicy: Always
+    tag: "1.0.0"
+  container:
+    resources:
+      requests:
+        cpu: 999m
+        memory: 123Mi
+      limits:
+        cpu: 888m
+        memory: 4321Mi
+  apiBaseAddress: "test-api.address"
+
+api:
+  image:
+    repository: docker.subshell.com/labday/knowledge-base/kb-api
+    pullPolicy: Always
+    tag: "1.0.0"
+  container:
+    resources:
+      requests:
+        cpu: 222m
+        memory: 42Mi
+      limits:
+        cpu: 333m
+        memory: 1337Mi
+  sophora:
+    connection:
+      urls:
+        - "http://sophora-server1"
+        - "http://sophora-server2"
+    authentication:
+      secret:
+        name: "knowledge-base-sophora-credentials"
+        usernameKey: "sophora-user"
+        passwordKey: "sophora-password"
+
+imagePullSecrets: []
+nameOverride: "testNameOverride"
+fullnameOverride: "fullTestNameOverride"
+
+podAnnotations:
+  my/test/annotation: "foo"
+  my/other/annotation: "bar"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: frontend.knowledge-base.test
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
