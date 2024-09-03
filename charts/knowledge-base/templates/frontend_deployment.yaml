@@ -30,7 +30,9 @@ spec:
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           env:
             - name: API_ADDRESS
-              value: {{ .Values.frontend.apiBaseAddress }}
+              value: "http://{{ include "knowledge-base.fullname.api" . }}"
+            - name: API_EXTERNAL_HOSTNAME
+              value: {{ join " " .Values.ingress.hosts | quote }}
           ports:
             - name: http
               containerPort: 80
