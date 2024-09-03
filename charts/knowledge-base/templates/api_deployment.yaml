@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ include "knowledge-base.fullname" . }}-api"
+  name: {{ include "knowledge-base.fullname.api" . }}
   labels:
     {{- include "knowledge-base-api.labels" . | nindent 4 }}
 spec:

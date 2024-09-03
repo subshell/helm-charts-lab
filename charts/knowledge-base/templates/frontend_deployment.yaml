@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ include "knowledge-base.fullname" . }}-frontend"
+  name: {{ include "knowledge-base.fullname.frontend" . }}
   labels:
     {{- include "knowledge-base-frontend.labels" . | nindent 4 }}
 spec:
