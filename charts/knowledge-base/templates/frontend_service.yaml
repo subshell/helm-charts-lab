@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "knowledge-base.fullname" . }}
+  name: "{{ include "knowledge-base.fullname" . }}-frontend"
   labels:
     {{- include "knowledge-base-frontend.labels" . | nindent 4 }}
 spec:

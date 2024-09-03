@@ -38,8 +38,8 @@ api:
         passwordKey: "sophora-password"
 
 imagePullSecrets: []
-nameOverride: "testNameOverride"
-fullnameOverride: "fullTestNameOverride"
+nameOverride: "test-name-override"
+fullnameOverride: "full-test-name-override"
 
 podAnnotations:
   my/test/annotation: "foo"
