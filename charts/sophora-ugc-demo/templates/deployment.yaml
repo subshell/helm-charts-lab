@@ -45,7 +45,7 @@ spec:
             - name: SUBMISSIONS_S3_ACCESSKEYID
               valueFrom:
                 secretKeyRef:
-                  key: {{ .Values.sophora.authentication.s3bucket.accessKeyKey }}
+                  key: {{ .Values.sophora.authentication.s3bucket.accessKeyId }}
                   name: {{ .Values.sophora.authentication.s3bucket.name }}
                   optional: false
             - name: SUBMISSIONS_S3_SECRETACCESSKEY

@@ -42,7 +42,7 @@ sophora:
       passwordKey: password
     s3bucket:
       name: s3bucket-secret
-      accessKeyKey: s3bucket-access-key
+      accessKeyId: s3bucket-access-key
       secretIdKey: s3bucket-secret-id
 
 # Additional environment variables can be defined here
