@@ -42,6 +42,18 @@ spec:
                   key: {{ .Values.sophora.authentication.secret.passwordKey }}
                   name: {{ .Values.sophora.authentication.secret.name }}
                   optional: false
+            - name: SUBMISSIONS_S3_ACCESSKEYID
+              valueFrom:
+                secretKeyRef:
+                  key: {{ .Values.sophora.authentication.s3bucket.accessKeyId }}
+                  name: {{ .Values.sophora.authentication.s3bucket.name }}
+                  optional: false
+            - name: SUBMISSIONS_S3_SECRETACCESSKEY
+              valueFrom:
+                secretKeyRef:
+                  key: {{ .Values.sophora.authentication.s3bucket.secretIdKey }}
+                  name: {{ .Values.sophora.authentication.s3bucket.name }}
+                  optional: false
           command: [ "/bin/sh" ]
           args:
             - "-c"
