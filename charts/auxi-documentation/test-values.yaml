@@ -18,14 +18,15 @@ podSecurityContext:
 
 service:
   type: ClusterIP
-  port: 80
+  port: 99
 
 ingress:
-  enabled: false
+  enabled: true
   annotations:
     ingress/annotation: bar
   hosts:
-    - "foo.bar.docs"
+    - host: "foo.bar.docs"
+    - host: "bar.foo.docs"
   tls: []
 
 resources:
@@ -44,9 +45,10 @@ affinity: {}
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: false
+  create: true
   # Annotations to add to the service account
-  annotations: {}
+  annotations:
+    service-account/role: admin
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ""
+  name: "some-service-account-to-create"
