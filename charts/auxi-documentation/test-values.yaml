@@ -1,0 +1,54 @@
+replicaCount: 42
+
+image:
+  repository: docker.subshell.com/auxi/auxi-documentation
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: "overridden-name"
+fullnameOverride: "full-name-override-docs"
+
+podAnnotations:
+  pod/annotation: foo
+
+podSecurityContext:
+  fsGroup: 2000
+
+service:
+  type: ClusterIP
+  port: 99
+
+ingress:
+  enabled: true
+  annotations:
+    ingress/annotation: bar
+  hosts:
+    - host: "foo.bar.docs"
+    - host: "bar.foo.docs"
+  tls: []
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1024Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations:
+    service-account/role: admin
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "some-service-account-to-create"
