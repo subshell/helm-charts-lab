@@ -1,0 +1,11 @@
+apiVersion: v2
+name: auxi-documentation
+description: Auxi API documentation
+type: application
+version: 1.0.0
+appVersion: "0.3.15"
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Created helm chart for Auxi documentation
