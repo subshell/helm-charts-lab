@@ -39,6 +39,16 @@ entries:
   group-challenge:
   - apiVersion: v2
     appVersion: 0.14.0
+    created: "2025-08-11T08:13:52.719289175Z"
+    description: Group challenge helm chart
+    digest: 2c1777906e3050eeda23a2e3038c66e7cb6c216a653ccd7b21835b2d465db277
+    name: group-challenge
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/group-challenge-2.0.0/group-challenge-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 0.14.0
     created: "2024-12-30T13:06:33.979654894Z"
     dependencies:
     - condition: postgresql.enabled
@@ -324,4 +334,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2025-07-14T10:32:04.174724759Z"
+generated: "2025-08-11T08:13:52.719361089Z"
