@@ -101,17 +101,6 @@ imgProxy:
   image:
     repository: darthsim/imgproxy
     pullPolicy: IfNotPresent
-    tag: "v3.21.0"
+    tag: "v3.29.1"
   env: []
   resources: {}
-
-postgresql:
-  enabled: true
-  fullnameOverride: gc-postgres
-  primary:
-    podAnnotations:
-      "cluster-autoscaler.kubernetes.io/safe-to-evict": "true"
-  auth:
-    database: "group_challenge"
-    enablePostgresUser: true
-    postgresPassword: postgres
