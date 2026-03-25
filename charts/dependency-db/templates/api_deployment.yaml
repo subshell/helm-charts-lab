@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dependency-db.fullname.api" . }}
+  labels:
+    {{- include "dependency-db-api.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dependency-db-api.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        "cluster-autoscaler.kubernetes.io/safe-to-evict": "true"
+        checksum/config: {{ include (print $.Template.BasePath "/config.yaml") . | sha256sum }}
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      labels:
+        {{- include "dependency-db-api.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      restartPolicy: Always
+      containers:
+        - name: "{{ .Chart.Name }}-api"
+          image: "{{ .Values.api.image.repository }}:{{ .Values.api.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.api.image.pullPolicy }}
+          volumeMounts:
+            - name: config
+              mountPath: "/application.yml"
+              subPath: "application.yml"
+          {{ with .Values.importerconfig.env -}}
+          env:
+                {{- toYaml . | nindent 12 }}
+              {{- end }}
+          envFrom:
+                {{- range .Values.importerconfig.envFromSecrets }}
+            - secretRef:
+                name: {{ .secretRef }}
+                {{- end }}
+          ports:
+            - name: http
+              containerPort: 8181
+              protocol: TCP
+          livenessProbe:
+            # quickfix for the probes. Should use spring-boot endpoints in the future
+            httpGet:
+              path: /knowledgebase/list?pageIndex=0&pageSize=1
+              port: http
+            initialDelaySeconds: 5
+            failureThreshold: 6
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /knowledgebase/list?pageIndex=0&pageSize=1
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 30
+          resources:
+            {{- toYaml .Values.api.container.resources | nindent 12 }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "dependency-db.fullname" . }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

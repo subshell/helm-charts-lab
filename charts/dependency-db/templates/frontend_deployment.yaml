@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dependency-db.fullname.frontend" . }}
+  labels:
+    {{- include "dependency-db-frontend.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dependency-db-frontend.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        "cluster-autoscaler.kubernetes.io/safe-to-evict": "true"
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      labels:
+        {{- include "dependency-db-frontend.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      restartPolicy: Always
+      containers:
+        - name: "{{ .Chart.Name }}-frontend"
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          env:
+            - name: DEPDB_API_ADDRESS
+              value: "http://{{ include "dependency-db.fullname.api" . }}"
+            - name: DEPDB_JIRA_ADDRESS
+              value: {{ .Values.jira.address }}"
+            - name: DEPDB_EXTERNAL_HOSTNAME
+              value: {{ join " " .Values.ingress.hosts | quote }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.frontend.container.resources | nindent 12 }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "dependency-db.fullname" . }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
