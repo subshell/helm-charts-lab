@@ -26,6 +26,14 @@ api:
         cpu: 333m
         memory: 1337Mi
   config:
+    management:
+      health:
+        neo4j:
+          enabled: false
+        livenessstate:
+          enabled: true
+        readinessstate:
+          enabled: true
     basepoms:
       coordinates:
         - "com.subshell.sophora:basepom"

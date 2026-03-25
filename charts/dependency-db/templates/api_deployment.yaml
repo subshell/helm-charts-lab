@@ -44,22 +44,21 @@ spec:
                 {{- end }}
           ports:
             - name: http
-              containerPort: 8181
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
-            # quickfix for the probes. Should use spring-boot endpoints in the future
             httpGet:
-              path: /knowledgebase/list?pageIndex=0&pageSize=1
+              path: /actuator/health/liveness
               port: http
             initialDelaySeconds: 5
             failureThreshold: 6
             periodSeconds: 20
           readinessProbe:
             httpGet:
-              path: /knowledgebase/list?pageIndex=0&pageSize=1
+              path: /actuator/health/readiness
               port: http
             initialDelaySeconds: 30
-            periodSeconds: 30
+            periodSeconds: 10
           resources:
             {{- toYaml .Values.api.container.resources | nindent 12 }}
       volumes:
