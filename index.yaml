@@ -36,6 +36,17 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/auxi-documentation-1.0.0/auxi-documentation-1.0.0.tgz
     version: 1.0.0
+  dependency-db:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-03-25T15:49:53.823108548Z"
+    description: Dependency-DB with frontend, API-Backend
+    digest: ff468c4cd4943c5442eb5cdc82385c2ed0785177f7e330648ddf59c8264dfa39
+    name: dependency-db
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/dependency-db-0.1.0/dependency-db-0.1.0.tgz
+    version: 0.1.0
   group-challenge:
   - apiVersion: v2
     appVersion: 0.14.0
@@ -334,4 +345,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2025-08-11T08:13:52.719361089Z"
+generated: "2026-03-25T15:49:53.823168344Z"
