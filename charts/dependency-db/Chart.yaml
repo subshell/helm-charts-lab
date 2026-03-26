@@ -4,3 +4,8 @@ description: Dependency-DB with frontend, API-Backend
 type: application
 version: 0.2.0
 appVersion: "0.1.0"
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: "added"
+      description: "The ingress now proxies to API and Jira"
