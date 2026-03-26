@@ -1,0 +1,11 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "dependency-db.fullname.api" . }}-jira-service
+  labels:
+    {{- include "dependency-db-api.labels" . | nindent 4 }}
+spec:
+  type: ExternalName
+  externalName: {{ .Values.jira.hostname }}
+{{- end }}

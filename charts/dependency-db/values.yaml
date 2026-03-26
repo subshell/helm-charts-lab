@@ -41,7 +41,7 @@ importerconfig:
     - secretRef: graph-db-pw-secret
 
 jira:
-  address: "https://jira.example.com"
+  hostname: "jira.example.com"
 
 imagePullSecrets: []
 nameOverride: ""

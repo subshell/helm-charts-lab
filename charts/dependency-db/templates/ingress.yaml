@@ -1,5 +1,6 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "dependency-db.fullname.frontend" . -}}
+{{- $apiServiceName := include "dependency-db.fullname.api" . -}}
 {{- $svcPort := .Values.service.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -37,5 +38,19 @@ spec:
                 name: {{ $fullName }}
                 port: 
                   number: {{ $svcPort }}
+          - path: /api/db/
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $apiServiceName }}
+                port:
+                  number: {{ $svcPort }}
+          - path: /api/jira/
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $apiServiceName }}-jira-service
+                port:
+                  number: 443
     {{- end }}
   {{- end }}
