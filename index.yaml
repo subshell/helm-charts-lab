@@ -39,6 +39,20 @@ entries:
   dependency-db:
   - annotations:
       artifacthub.io/changes: |
+        - kind: "changed"
+          description: "Ingress uses regex for path matching"
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-03-26T15:01:39.320531031Z"
+    description: Dependency-DB with frontend, API-Backend
+    digest: a8cd49df04dfd229eda1be2b09bdadd1d492f776ae1e3c15aab1b8eeefae412a
+    name: dependency-db
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/dependency-db-0.2.1/dependency-db-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: "added"
           description: "The ingress now proxies to API and Jira"
     apiVersion: v2
@@ -359,4 +373,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-03-26T13:49:20.329112236Z"
+generated: "2026-03-26T15:01:39.32059489Z"
