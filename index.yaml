@@ -37,6 +37,20 @@ entries:
     - https://github.com/subshell/helm-charts-lab/releases/download/auxi-documentation-1.0.0/auxi-documentation-1.0.0.tgz
     version: 1.0.0
   dependency-db:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: "added"
+          description: "The ingress now proxies to API and Jira"
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-03-26T13:49:20.329039816Z"
+    description: Dependency-DB with frontend, API-Backend
+    digest: fe766a1c09ac12d7f8d71a8e4ff79f0faf8c88e134f992fc0dbcd2007038b9ae
+    name: dependency-db
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/dependency-db-0.2.0/dependency-db-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.0
     created: "2026-03-25T15:49:53.823108548Z"
@@ -345,4 +359,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-03-25T15:49:53.823168344Z"
+generated: "2026-03-26T13:49:20.329112236Z"
