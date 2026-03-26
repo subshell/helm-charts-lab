@@ -2,10 +2,10 @@ apiVersion: v2
 name: dependency-db
 description: Dependency-DB with frontend, API-Backend
 type: application
-version: 0.2.0
+version: 0.2.1
 appVersion: "0.1.0"
 
 annotations:
   artifacthub.io/changes: |
-    - kind: "added"
-      description: "The ingress now proxies to API and Jira"
+    - kind: "changed"
+      description: "Ingress uses regex for path matching"
