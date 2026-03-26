@@ -29,10 +29,6 @@ spec:
           image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           env:
-            - name: DEPDB_API_ADDRESS
-              value: "http://{{ include "dependency-db.fullname.api" . }}"
-            - name: DEPDB_JIRA_ADDRESS
-              value: {{ .Values.jira.address }}"
             - name: DEPDB_EXTERNAL_HOSTNAME
               value: {{ join " " .Values.ingress.hosts | quote }}
           ports:
