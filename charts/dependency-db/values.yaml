@@ -42,6 +42,7 @@ importerconfig:
 
 jira:
   hostname: "jira.example.com"
+  port: 443
 
 imagePullSecrets: []
 nameOverride: ""
