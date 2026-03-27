@@ -2,14 +2,17 @@
 {{- $fullName := include "dependency-db.fullname.frontend" . -}}
 {{- $apiServiceName := include "dependency-db.fullname.api" . -}}
 {{- $svcPort := .Values.service.port -}}
+{{- $jiraPort := .Values.jira.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ $fullName }}
+  name: {{ $fullName }}-proxy
   labels:
     {{- include "dependency-db-frontend.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
@@ -31,12 +34,19 @@ spec:
     - host: {{ . | quote }}
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: /api/db/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
-                name: {{ $fullName }}
-                port: 
+                name: {{ $apiServiceName }}
+                port:
                   number: {{ $svcPort }}
+          - path: /api/jira/(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ $apiServiceName }}-jira-service
+                port:
+                  number: {{ $jiraPort }}
     {{- end }}
   {{- end }}
