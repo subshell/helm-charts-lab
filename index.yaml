@@ -40,6 +40,20 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: "changed"
+          description: "Ingress split up into one rewrite/proxy ingress and the default ingress"
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-03-27T13:55:07.365002403Z"
+    description: Dependency-DB with frontend, API-Backend
+    digest: 6bfe4a87b79186163745b072e78b653c39cb30805677e2ae5bbc9590d8b9f1dc
+    name: dependency-db
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/dependency-db-0.2.2/dependency-db-0.2.2.tgz
+    version: 0.2.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: "changed"
           description: "Ingress uses regex for path matching"
     apiVersion: v2
     appVersion: 0.1.0
@@ -373,4 +387,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-03-26T15:01:39.32059489Z"
+generated: "2026-03-27T13:55:07.365079977Z"
