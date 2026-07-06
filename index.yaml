@@ -378,6 +378,20 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: "changed"
+          description: "use container.subshell.com for pulling image by default"
+    apiVersion: v2
+    appVersion: 1.2.4-SNAPSHOT
+    created: "2026-07-06T14:33:30.847278268Z"
+    description: A Helm chart for Kubernetes
+    digest: 006f00d461332dd22eca6c540f90d67407549c3bfb757afc2eb2a64faf48c696
+    name: sprint-dashboard
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/sprint-dashboard-0.2.0/sprint-dashboard-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: "changed"
           description: "moved from Harbor chart registry"
     apiVersion: v2
     appVersion: 0.0.1-SNAPSHOT
@@ -402,4 +416,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-07-06T14:17:54.560341272Z"
+generated: "2026-07-06T14:33:30.84732189Z"
