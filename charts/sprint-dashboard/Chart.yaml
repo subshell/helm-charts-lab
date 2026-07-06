@@ -1,11 +1,11 @@
 apiVersion: v2
-appVersion: 0.0.1-SNAPSHOT
+appVersion: 1.2.4-SNAPSHOT
 description: A Helm chart for Kubernetes
 name: sprint-dashboard
 type: application
 
-version: 0.1.0
+version: 0.2.0
 annotations:
   artifacthub.io/changes: |
     - kind: "changed"
-      description: "moved from Harbor chart registry"
+      description: "use container.subshell.com for pulling image by default"

@@ -2,7 +2,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 image:
-  repository: docker.subshell.com/labday/sprint-dashboard
+  repository: container.subshell.com/labday/sprint-dashboard
   version: latest
   pullPolicy: IfNotPresent
 
