@@ -374,6 +374,21 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/sophora-ugc-demo-0.1.0/sophora-ugc-demo-0.1.0.tgz
     version: 0.1.0
+  sprint-dashboard:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: "changed"
+          description: "moved from Harbor chart registry"
+    apiVersion: v2
+    appVersion: 0.0.1-SNAPSHOT
+    created: "2026-07-06T14:17:54.560051885Z"
+    description: A Helm chart for Kubernetes
+    digest: 2fe8a793f3a259c354322fcec5a54b583e8497dc7b5520e7f6f32ea546060246
+    name: sprint-dashboard
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/sprint-dashboard-0.1.0/sprint-dashboard-0.1.0.tgz
+    version: 0.1.0
   subshell-technology-radar:
   - apiVersion: v2
     created: "2023-04-13T15:22:14.694995833Z"
@@ -387,4 +402,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-03-27T13:55:07.365079977Z"
+generated: "2026-07-06T14:17:54.560341272Z"
