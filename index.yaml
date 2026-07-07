@@ -3,6 +3,16 @@ entries:
   artifactory-search:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2026-07-07T15:51:23.017836844Z"
+    description: Artifactory Search helm chart
+    digest: 43960ca5aaa4da86c0445d5b8984e772fc5bbcfd4668b9198bd72e1d66022fa1
+    name: artifactory-search
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/artifactory-search-1.0.2/artifactory-search-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2024-04-12T20:29:18.832459745Z"
     description: Artifactory Search helm chart
     digest: ea93077d8790510b8cf569effa2e75751c40da7279311e5de10b4df88c2eb631
@@ -25,6 +35,20 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
+          description: OCI Repository support
+    apiVersion: v2
+    appVersion: 0.3.15
+    created: "2026-07-07T15:51:23.308908693Z"
+    description: Auxi API documentation
+    digest: 2204abc7d48e89cddc3e16fc815e9fd70caf16f7a43c446dafcaba18182257a1
+    name: auxi-documentation
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/auxi-documentation-1.0.1/auxi-documentation-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
           description: Created helm chart for Auxi documentation
     apiVersion: v2
     appVersion: 0.3.15
@@ -37,6 +61,20 @@ entries:
     - https://github.com/subshell/helm-charts-lab/releases/download/auxi-documentation-1.0.0/auxi-documentation-1.0.0.tgz
     version: 1.0.0
   dependency-db:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: "added"
+          description: "OCI Repository support"
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-07-07T15:51:23.866715072Z"
+    description: Dependency-DB with frontend, API-Backend
+    digest: da1e4359d35378773f1806efa7f052d97a241c8686022fdc616221bf26145ce2
+    name: dependency-db
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/dependency-db-0.2.3/dependency-db-0.2.3.tgz
+    version: 0.2.3
   - annotations:
       artifacthub.io/changes: |
         - kind: "changed"
@@ -253,6 +291,16 @@ entries:
   knowledge-base:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2026-07-07T15:51:24.161445168Z"
+    description: Knowledge Base frontend and API/backend
+    digest: 4bdba5be9ec53712d1690d46576ec27dccb2599f501dd3fcc1b9cfeffe3aeaac
+    name: knowledge-base
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/knowledge-base-0.1.7/knowledge-base-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2024-09-03T09:52:32.709853925Z"
     description: Knowledge Base frontend and API/backend
     digest: 008ba270209a11ab5ec7396bf4a6cf19b80082271bd904c5229103a33af0f337
@@ -322,6 +370,19 @@ entries:
     - https://github.com/subshell/helm-charts-lab/releases/download/knowledge-base-0.1.0/knowledge-base-0.1.0.tgz
     version: 0.1.0
   sophora-ugc-demo:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2026-07-07T15:51:24.38788917Z"
+    description: A Helm chart for the UGC demo
+    digest: a968aec6c0e7520a8d0904c247b296df446d1442bf33f548530e3be20977f61b
+    maintainers:
+    - email: team-koala@subshell.com
+      name: Team Koala
+    name: sophora-ugc-demo
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/sophora-ugc-demo-0.1.4/sophora-ugc-demo-0.1.4.tgz
+    version: 0.1.4
   - apiVersion: v2
     appVersion: latest
     created: "2025-02-05T10:36:11.77128546Z"
@@ -405,6 +466,18 @@ entries:
     version: 0.1.0
   subshell-technology-radar:
   - apiVersion: v2
+    created: "2026-07-07T15:51:24.621185278Z"
+    description: A Helm chart for the subshell Technology Radar
+    digest: a534eb58c8c633ef86f6444182658983e78d12052174da0a702706961ac62578
+    maintainers:
+    - email: weasel@subshell.com
+      name: Team Weasel
+    name: subshell-technology-radar
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.1/subshell-technology-radar-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2023-04-13T15:22:14.694995833Z"
     description: A Helm chart for the subshell Technology Radar
     digest: a5220e598e8dfacbb8e3b783af1b76fcf5d0645bf5e3825602b4e07e69c5ce7e
@@ -416,4 +489,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-07-06T14:33:30.84732189Z"
+generated: "2026-07-07T15:51:24.621247532Z"
