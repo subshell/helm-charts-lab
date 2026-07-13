@@ -4,8 +4,8 @@ description: A Helm chart for Kubernetes
 name: sprint-dashboard
 type: application
 
-version: 0.2.1
+version: 0.2.2
 annotations:
   artifacthub.io/changes: |
     - kind: "changed"
-      description: "fixed repository path for container.subshell.com"
+      description: "use labday repo at container.subshell.com"
