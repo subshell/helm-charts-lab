@@ -449,6 +449,20 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: "changed"
+          description: "use correct labday repo at container.subshell.com"
+    apiVersion: v2
+    appVersion: 1.2.4-SNAPSHOT
+    created: "2026-07-14T08:20:50.118003465Z"
+    description: A Helm chart for Kubernetes
+    digest: eb4d6f7070862f5f0a7e785435db7c0ba06d0812e3340503e2405eef89418417
+    name: sprint-dashboard
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/sprint-dashboard-0.2.3/sprint-dashboard-0.2.3.tgz
+    version: 0.2.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: "changed"
           description: "use labday repo at container.subshell.com"
     apiVersion: v2
     appVersion: 1.2.4-SNAPSHOT
@@ -527,4 +541,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-07-13T13:51:37.140356262Z"
+generated: "2026-07-14T08:20:50.118090769Z"
