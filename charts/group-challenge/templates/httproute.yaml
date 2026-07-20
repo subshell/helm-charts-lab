@@ -1,5 +1,5 @@
 {{- $fullName := include "group-challenge.fullname" . -}}
-{{- $labels := include "group-challenge.fullname" . -}}
+{{- $labels := include "group-challenge.labels" . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- range $nameSuffix := (.Values.httpRoutes | keys | sortAlpha) }}
 {{- $httpRoute := index $.Values.httpRoutes $nameSuffix }}
