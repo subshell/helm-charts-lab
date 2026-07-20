@@ -129,6 +129,16 @@ entries:
     version: 0.1.0
   group-challenge:
   - apiVersion: v2
+    appVersion: 0.14.1
+    created: "2026-07-20T07:24:27.717420415Z"
+    description: Group challenge helm chart
+    digest: c7c348ec16b99a44c886d6aba9e08ecaf6547ca764494b5e8ea6b27ed95d457a
+    name: group-challenge
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/group-challenge-2.1.0/group-challenge-2.1.0.tgz
+    version: 2.1.0
+  - apiVersion: v2
     appVersion: 0.14.0
     created: "2026-07-07T16:09:22.910920813Z"
     description: Group challenge helm chart
@@ -541,4 +551,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-07-14T08:20:50.118090769Z"
+generated: "2026-07-20T07:24:27.717543363Z"
