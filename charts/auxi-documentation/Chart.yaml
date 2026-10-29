@@ -2,10 +2,10 @@ apiVersion: v2
 name: auxi-documentation
 description: Auxi API documentation
 type: application
-version: 1.0.1
+version: 1.1.0
 appVersion: "0.3.15"
 
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: OCI Repository support
+    - kind: changed
+      description: use container.subshell.com for image

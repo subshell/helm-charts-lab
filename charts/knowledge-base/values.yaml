@@ -1,6 +1,6 @@
 frontend:
   image:
-    repository: docker.subshell.com/labday/knowledge-base/kb-frontend
+    repository: container.subshell.com/labday/knowledge-base/kb-frontend
     pullPolicy: Always
     tag: "latest"
   container:
@@ -14,7 +14,7 @@ frontend:
 
 api:
   image:
-    repository: docker.subshell.com/labday/knowledge-base/kb-api
+    repository: container.subshell.com/labday/knowledge-base/kb-api
     pullPolicy: Always
     tag: "latest"
   container:

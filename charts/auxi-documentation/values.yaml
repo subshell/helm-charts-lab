@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.subshell.com/auxi/auxi-documentation
+  repository: container.subshell.com/labday/auxi/auxi-documentation
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""

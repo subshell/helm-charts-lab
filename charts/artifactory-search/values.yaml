@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.subshell.com/labday/artifactory_search_native
+  repository: container.subshell.com/labday/artifactory_search_native
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"

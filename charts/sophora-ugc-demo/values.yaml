@@ -4,7 +4,7 @@ fullnameOverride: ""
 replicaCount: 1
 
 image:
-  repository: docker.subshell.com/ugc/ugc-demo
+  repository: container.subshell.com/subshell/ugc-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""

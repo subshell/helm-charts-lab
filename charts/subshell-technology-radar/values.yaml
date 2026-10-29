@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.subshell.com/tools/subshell-technology-radar
+  repository: container.subshell.com/labday/subshell-technology-radar
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "master"
