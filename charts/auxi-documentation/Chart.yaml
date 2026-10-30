@@ -2,10 +2,12 @@ apiVersion: v2
 name: auxi-documentation
 description: Auxi API documentation
 type: application
-version: 1.1.0
-appVersion: "0.3.15"
+version: 1.2.0
+appVersion: "0.7.0"
 
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: use container.subshell.com for image
+    - kind: added
+      description: added HTTPRoute
+    - kind: added
+      description: added GCPBackendPolicy and HealthCheckPolicy
