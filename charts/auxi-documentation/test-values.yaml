@@ -29,6 +29,17 @@ ingress:
     - host: "bar.foo.docs"
   tls: []
 
+httpRoutes:
+  web:
+    parentRefs:
+      - name: my-gateway
+        namespace: gateway-namespace
+    hostnames:
+      - "host1.foo"
+      - "host2.bar"
+    annotations:
+      test/annotation: "this is a test"
+
 resources:
   requests:
     cpu: 100m
