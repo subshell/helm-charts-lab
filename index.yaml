@@ -44,6 +44,22 @@ entries:
   auxi-documentation:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: added HTTPRoute
+        - kind: added
+          description: added GCPBackendPolicy and HealthCheckPolicy
+    apiVersion: v2
+    appVersion: 0.7.0
+    created: "2026-10-30T17:06:10.15073729Z"
+    description: Auxi API documentation
+    digest: b84f08a90aa58fc8d3c363e076c8a7c95f66e4e3fbb6b03df488a83cbdd89c1a
+    name: auxi-documentation
+    type: application
+    urls:
+    - https://github.com/subshell/helm-charts-lab/releases/download/auxi-documentation-1.2.0/auxi-documentation-1.2.0.tgz
+    version: 1.2.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: use container.subshell.com for image
     apiVersion: v2
@@ -654,4 +670,4 @@ entries:
     urls:
     - https://github.com/subshell/helm-charts-lab/releases/download/subshell-technology-radar-1.0.0/subshell-technology-radar-1.0.0.tgz
     version: 1.0.0
-generated: "2026-10-29T16:30:58.430736401Z"
+generated: "2026-10-30T17:06:10.150964595Z"
